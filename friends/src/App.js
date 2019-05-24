@@ -32,8 +32,8 @@ class App extends Component {
             <h1 className="App-Title">{`Yasuke's Friends`}</h1>
             <Route exact path="/login" component={Login} />
           </header>
-          <PrivateRoute exact path="/protected" component={FriendForm, Friends} />
-          {this.props.error ? <h3>Error Fetching Friends</h3> : null}
+          <PrivateRoute exact path="/protected" component={FriendForm, Friends}>
+          </PrivateRoute>
         </div>
       </Router>
     );

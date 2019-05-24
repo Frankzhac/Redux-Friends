@@ -34,6 +34,14 @@ class Friends extends Component {
             );
           })}
         </ul>
+        {this.props.error ? <h3>Error Fetching Friends</h3> : null}
+        <div className="Flex-Container">
+          {this.props.gettingFriends ? (
+            <img src={logo} className="App-logo" alt="logo" />
+          ) : (
+            <Friends friends={this.props.friends} />
+          )}
+        </div>
         <div className="key spinner">
             <Loader type="Puff" color="#204963" height="60" width="60" />
             <p>Loading Friend</p>
