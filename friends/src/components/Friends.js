@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import SelectedFriend from './SelectedFriend';
+import logo from '../logo.svg';
 import { connect } from 'react-redux';
 import { deleteFriend, updateSingleFriend, toggleShowUpdate } from '../actions';
+
+import Loader from 'react-loader-spinner';
 import UpdateFriendForm from './UpdateFriendForm';
+
 
 class Friends extends Component {
   handleDeleteFriend = () => {
@@ -30,6 +34,10 @@ class Friends extends Component {
             );
           })}
         </ul>
+        <div className="key spinner">
+            <Loader type="Puff" color="#204963" height="60" width="60" />
+            <p>Loading Friend</p>
+          </div>
         {Object.keys(this.props.friendSelected).length > 0 ? (
           <SelectedFriend
             handleShowFriend={this.handleShowFriend}

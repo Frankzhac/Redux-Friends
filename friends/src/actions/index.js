@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const LOGIN_START = "LOGIN_START";
 export const ERROR = 'ERROR';
 export const GET_FRIENDS = 'GET_FRIENDS';
 export const GETTING_FRIENDS = 'GETTING_FRIENDS';
@@ -13,6 +14,21 @@ export const SINGLE_FRIEND = 'SINGLE_FRIEND';
 export const TOGGLE_UPDATE_FRIEND = 'TOGGLE_UPDATE_FRIEND';
 
 const URL = 'http://localhost:5000/api/friends';
+
+export const login = creds => dispatch => {
+  dispatch({
+    type: LOGIN_START
+  });
+  return axios
+    .post(`${URL}/login`, creds)
+    .then(res => {
+      console.log(res.data);
+      localStorage.setItem("token", res.data.payload);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
 export const getFriends = () => {
   const friends = axios.get(`${URL}/get`);

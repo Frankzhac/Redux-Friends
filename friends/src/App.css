@@ -1,11 +1,15 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Prompt|Roboto');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-bottom: 36px;
 }
 
 .App-header {
@@ -30,4 +34,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 36px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+li {
+  list-style: none;
+  margin-right: 6px;
+  color: #204963;
+}
+
+a {
+  text-decoration: none;
+  padding: 6px;
+  color: #204963;
+}
+.spinner {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: #204963;
 }

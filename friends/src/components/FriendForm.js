@@ -12,7 +12,7 @@ class FriendForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleAddFriend = _ => {
+  handleAddFriend = e => {
     const { name, age, email } = this.state;
     this.props.createFriend({ name, age, email });
     this.setState({
